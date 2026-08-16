@@ -46,6 +46,11 @@ a:hover {
   font-size: var(--font-size-logo);
   font-weight: var(--font-weight-logo);
 }
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
 .app-nav {
   display: flex;
   gap: var(--space-4);
@@ -61,6 +66,109 @@ a:hover {
 }
 .app-nav-link-active {
   color: var(--color-primary);
+}
+
+/* -------------------------------------------------------------
+ * Notification bell
+ * ----------------------------------------------------------- */
+.notif-bell-wrap {
+  position: relative;
+  display: inline-flex;
+}
+.notif-bell-btn {
+  color: var(--color-gray-700);
+}
+.notif-bell-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: var(--radius-pill);
+  background: var(--color-status-danger-fg);
+  color: var(--color-white);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notif-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: 20;
+}
+.notif-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  max-width: 90vw;
+  overflow-y: auto;
+  padding: var(--space-4);
+  margin: 0;
+  background: var(--color-white);
+  border-left: 1px solid var(--color-border-default);
+  z-index: 21;
+  animation: panel-slide-in var(--transition-base);
+}
+.notif-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+.notif-panel-title {
+  margin: 0;
+}
+.notif-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+.notif-card-read {
+  background: var(--color-gray-50);
+}
+.notif-card-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+.notif-card-checkbox {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+}
+.notif-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-circle);
+  margin-top: 5px;
+}
+.notif-dot-warning {
+  background: var(--color-status-warning-fg);
+}
+.notif-dot-danger {
+  background: var(--color-status-danger-fg);
+}
+.notif-card-message {
+  font-size: var(--font-size-sm);
+}
+.notif-card-read .notif-card-message {
+  color: var(--color-gray-600);
+}
+.notif-empty {
+  padding: var(--space-2);
+  margin: 0;
 }
 
 /* -------------------------------------------------------------

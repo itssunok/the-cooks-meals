@@ -1,9 +1,3 @@
-const WEEKDAY_NAMES = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-
-function getTodayKey() {
-  return WEEKDAY_NAMES[new Date().getDay()];
-}
-
 function getMealById(id) {
   return getRotation().find((meal) => meal.id === id) || null;
 }

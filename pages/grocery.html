@@ -8,10 +8,13 @@
 <link rel="stylesheet" href="../styles/components.css">
 <script src="../data/meals.js" defer></script>
 <script src="../data/weeklyPlan.js" defer></script>
+<script src="../data/catFoodSchedule.js" defer></script>
 <script src="../data/pantry.js" defer></script>
+<script src="../scripts/dateUtils.js" defer></script>
 <script src="../scripts/planStore.js" defer></script>
 <script src="../scripts/mealStore.js" defer></script>
 <script src="../scripts/pantryStore.js" defer></script>
+<script src="../scripts/notifications.js" defer></script>
 <script src="../scripts/groceryStore.js" defer></script>
 <script src="../scripts/grocery.js" defer></script>
 </head>
@@ -20,14 +23,30 @@
 
   <header class="app-header">
     <span class="app-title">Meal Planner</span>
-    <nav class="app-nav">
-      <a href="../index.html" class="app-nav-link">Today</a>
-      <a href="./weekly.html" class="app-nav-link">This Week</a>
-      <a href="./rotation.html" class="app-nav-link">Rotation</a>
-      <a href="./pantry.html" class="app-nav-link">Pantry</a>
-      <a href="./grocery.html" class="app-nav-link app-nav-link-active">Grocery List</a>
-      <a href="./spend.html" class="app-nav-link">Spend Log</a>
-    </nav>
+    <div class="app-header-right">
+      <nav class="app-nav">
+        <a href="../index.html" class="app-nav-link">Today</a>
+        <a href="./weekly.html" class="app-nav-link">This Week</a>
+        <a href="./rotation.html" class="app-nav-link">Rotation</a>
+        <a href="./pantry.html" class="app-nav-link">Pantry</a>
+        <a href="./grocery.html" class="app-nav-link app-nav-link-active">Grocery List</a>
+        <a href="./spend.html" class="app-nav-link">Spend Log</a>
+      </nav>
+      <div class="notif-bell-wrap">
+        <button type="button" class="btn-icon-round notif-bell-btn" id="notif-bell-btn" aria-label="Notifications">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+          <span class="notif-bell-badge" id="notif-bell-badge" hidden></span>
+        </button>
+        <div class="notif-overlay" id="notif-overlay" hidden></div>
+        <div class="notif-panel" id="notif-panel" hidden>
+          <div class="notif-panel-header">
+            <h2 class="title-h3 notif-panel-title">Notifications</h2>
+            <button type="button" class="btn-icon-round notif-close-btn" id="notif-close-btn" aria-label="Close notifications">×</button>
+          </div>
+          <div id="notif-list"></div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <section class="section" aria-labelledby="grocery-heading">
