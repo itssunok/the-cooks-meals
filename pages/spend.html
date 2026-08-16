@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spend Log — Meal Planner</title>
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/components.css">
+<script src="../data/spendLog.js" defer></script>
+<script src="../scripts/spendStore.js" defer></script>
+<script src="../scripts/spend.js" defer></script>
+</head>
+<body>
+<div class="page">
+
+  <header class="app-header">
+    <span class="app-title">Meal Planner</span>
+    <nav class="app-nav">
+      <a href="../index.html" class="app-nav-link">Today</a>
+      <a href="./weekly.html" class="app-nav-link">This Week</a>
+      <a href="./rotation.html" class="app-nav-link">Rotation</a>
+      <a href="./pantry.html" class="app-nav-link">Pantry</a>
+      <a href="./grocery.html" class="app-nav-link">Grocery List</a>
+      <a href="./spend.html" class="app-nav-link app-nav-link-active">Spend Log</a>
+    </nav>
+  </header>
+
+  <section class="section" aria-labelledby="spend-heading">
+    <h1 id="spend-heading" class="title-h1">Spend Log</h1>
+    <p class="section-desc">What grocery trips and ordered-out nights actually cost, over time.</p>
+
+    <div class="spend-summary-row">
+      <div class="card spend-summary-card">
+        <span class="label-eyebrow text-2xs">Groceries this month</span>
+        <span id="summary-grocery" class="spend-summary-value"></span>
+      </div>
+      <div class="card spend-summary-card">
+        <span class="label-eyebrow text-2xs">Ordered out this month</span>
+        <span id="summary-ordered-out" class="spend-summary-value spend-summary-value-warning"></span>
+      </div>
+    </div>
+
+    <form id="add-spend-form" class="inline-form">
+      <select class="form-input" name="type">
+        <option value="grocery">Grocery trip</option>
+        <option value="orderedOut">Ordered out</option>
+      </select>
+      <input class="form-input" type="number" name="amount" step="0.01" min="0.01" placeholder="Amount" required>
+      <input class="form-input" type="date" name="date">
+      <button type="submit" class="btn btn-secondary">Log</button>
+    </form>
+
+    <div id="spend-list"></div>
+  </section>
+
+</div>
+</body>
+</html>

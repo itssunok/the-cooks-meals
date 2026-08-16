@@ -246,6 +246,36 @@ a:hover {
 }
 
 /* -------------------------------------------------------------
+ * Spend log
+ * ----------------------------------------------------------- */
+.spend-summary-row {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.spend-summary-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.spend-summary-value {
+  font-size: var(--font-size-30);
+  font-weight: var(--font-weight-heavy);
+}
+.spend-summary-value-warning {
+  color: var(--color-status-warning-fg);
+}
+.spend-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.spend-entry-amount {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* -------------------------------------------------------------
  * Buttons
  * ----------------------------------------------------------- */
 .btn-row {
