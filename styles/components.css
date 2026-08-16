@@ -131,6 +131,10 @@ a:hover {
   background: var(--color-status-success-bg);
   color: var(--color-status-success-fg);
 }
+.meal-tag-catfood {
+  background: var(--color-status-warning-bg);
+  color: var(--color-status-warning-fg);
+}
 
 /* -------------------------------------------------------------
  * Add-meal form
@@ -159,30 +163,23 @@ a:hover {
   justify-content: space-between;
   gap: var(--space-3);
 }
-.week-day-row-info {
+.week-day-label {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-h3);
 }
-.week-day-row-right {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
+.week-day-name {
   flex-shrink: 0;
+}
+.week-day-meal {
+  font-weight: var(--font-weight-regular);
 }
 .week-day-select {
   flex-shrink: 0;
   width: 200px;
-}
-
-/* -------------------------------------------------------------
- * Cat food task card
- * ----------------------------------------------------------- */
-.cat-food-tag {
-  background: var(--color-status-warning-bg);
-  color: var(--color-status-warning-fg);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-2);
 }
 
 /* -------------------------------------------------------------

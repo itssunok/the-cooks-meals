@@ -51,10 +51,10 @@ function renderCatFoodSection() {
 
   section.hidden = false;
   card.innerHTML = `
-    <div class="card cat-food-card">
-      <span class="chip-pill cat-food-tag">Cat food</span>
-      <h3 class="title-h3">${CAT_FOOD_TASK.recipeName}</h3>
-      <p class="text-muted text-sm">Yields ${CAT_FOOD_TASK.batchYield}</p>
+    <div class="card meal-card">
+      ${renderMealCategoryTag("catFood", true)}
+      <h2 class="title-h2">${CAT_FOOD_TASK.recipeName}</h2>
+      <p class="text-muted text-sm meal-card-preptime">Yields ${CAT_FOOD_TASK.batchYield}</p>
       <div class="ingredient-list">${renderIngredientChips(CAT_FOOD_TASK.ingredients)}</div>
     </div>
   `;

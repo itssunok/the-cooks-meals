@@ -26,22 +26,20 @@ function renderDayRow(dayKey, plan) {
   const mealId = plan[dayKey];
   const meal = mealId ? getMealById(mealId) : null;
 
-  const infoMarkup = meal
-    ? `<span class="title-h3">${meal.name}</span><span class="text-muted text-sm">${meal.prepTime}</span>`
-    : `<span class="text-muted text-sm">Not planned yet</span>`;
+  const mealLabel = meal
+    ? `<span class="week-day-meal">${meal.name}</span>`
+    : `<span class="week-day-meal text-muted">Not planned yet</span>`;
 
   return `
     <div class="card week-day-row">
-      <div class="week-day-row-info">
-        <span class="label-eyebrow text-2xs">${WEEK_DAY_LABELS[dayKey]}</span>
-        ${infoMarkup}
-      </div>
-      <div class="week-day-row-right">
-        ${renderMealCategoryTag(meal && meal.category)}
-        <select class="form-input week-day-select" data-day="${dayKey}">
-          ${renderMealOptions(mealId)}
-        </select>
-      </div>
+      <p class="week-day-label">
+        <span class="week-day-name">${WEEK_DAY_LABELS[dayKey]}</span>
+        <span class="week-day-sep text-muted">—</span>
+        ${mealLabel}
+      </p>
+      <select class="form-input week-day-select" data-day="${dayKey}">
+        ${renderMealOptions(mealId)}
+      </select>
     </div>
   `;
 }

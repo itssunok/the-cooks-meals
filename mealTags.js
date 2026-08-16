@@ -2,12 +2,14 @@ const MEAL_CATEGORY_LABELS = {
   meat: "Meat",
   fish: "Fish",
   vegetarian: "Vegetarian",
+  catFood: "Cat food",
 };
 
 const MEAL_CATEGORY_CLASSES = {
   meat: "meal-tag-meat",
   fish: "meal-tag-fish",
   vegetarian: "meal-tag-vegetarian",
+  catFood: "meal-tag-catfood",
 };
 
 function renderMealCategoryTag(category, corner) {
