@@ -80,6 +80,12 @@ Since this is a two-person household prototype rather than a metered product, "s
 - [ ] Given a grocery trip happened, when logging it, then a $ amount can be attached and viewed later alongside past trips.
 - [ ] Given a night was "ordered out" instead of following the plan, when logging it, then a $ amount can be attached the same way.
 
+**Story 6:** As Partner A, I want reminders for the moments I'm most likely to forget — planning the week, prepping the cat's food, and restocking low/expiring pantry items — so that the plan doesn't depend entirely on me remembering unprompted.
+**Acceptance Criteria:**
+- [ ] Given the weekly plan hasn't been made yet, when the planning window arrives, then a mocked reminder appears in the notification panel.
+- [ ] Given the cat food prep day arrives, when due, then a mocked reminder appears in the notification panel.
+- [ ] Given a pantry item is low or expiring, when that state is reached, then a mocked reminder appears in the notification panel.
+
 ---
 
 ## 6. Solution Overview
@@ -92,6 +98,7 @@ Meal Planner is built around one core surface: **today's plan, visible immediate
 - **Pantry:** Tracks on-hand staples/ingredients with quantity-low and expiration flags — this is what the grocery list is generated *against*.
 - **Grocery list:** Auto-generated from the week's planned meals' ingredients minus what the pantry already covers; remains manually editable.
 - **Spend log:** Lightweight $ tracking — logging a grocery trip captures its cost, and marking a night as "ordered out" (instead of following the plan) captures that cost too. Enough to see spend trends over time; not a budgeting dashboard.
+- **Notifications:** A mocked in-app notification bell/panel — the reminder mechanism for the three forgetting-prone moments the PRD identifies: the weekly planning session not happening, cat food prep day arriving, and pantry items going low or expiring. Static/simulated, not real push notifications, consistent with the frontend-only prototype.
 - **Cat food:** A fixed recipe on a recurring schedule, surfaced as its own recurring task type — not folded into the human meal rotation, since it's not a decision anyone makes each time.
 
 **Key Design Decisions:**
