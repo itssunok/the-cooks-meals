@@ -193,6 +193,59 @@ a:hover {
 }
 
 /* -------------------------------------------------------------
+ * Grocery list
+ * ----------------------------------------------------------- */
+.grocery-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.grocery-item-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+.grocery-item-checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
+}
+.grocery-item-text {
+  display: flex;
+  flex-direction: column;
+}
+.grocery-item-name {
+  font-weight: var(--font-weight-semibold);
+}
+.grocery-item-checked .grocery-item-name {
+  color: var(--color-gray-600);
+  text-decoration: line-through;
+}
+.grocery-item-meta {
+  margin-top: 1px;
+}
+.grocery-item-remove {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+}
+
+/* -------------------------------------------------------------
+ * Inline add-item form
+ * ----------------------------------------------------------- */
+.inline-form {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+.inline-form-input {
+  flex: 1;
+}
+
+/* -------------------------------------------------------------
  * Buttons
  * ----------------------------------------------------------- */
 .btn-row {

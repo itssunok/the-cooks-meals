@@ -21,7 +21,7 @@ const PANTRY_ITEMS = [
   { id: "jasmine-rice", name: "Jasmine rice", quantity: 1, unit: "bag", lowStockThreshold: 0, expirationDate: "2027-01-01" },
   { id: "soy-sauce", name: "Soy sauce", quantity: 1, unit: "bottle", lowStockThreshold: 0, expirationDate: "2026-12-01" },
   { id: "chicken-broth", name: "Chicken broth", quantity: 0, unit: "cartons", lowStockThreshold: 2, expirationDate: "2027-03-01" },
-  { id: "yellow-onions", name: "Yellow onions", quantity: 4, unit: "", lowStockThreshold: 2, expirationDate: "2026-08-25" },
+  { id: "yellow-onion", name: "Yellow onion", quantity: 4, unit: "", lowStockThreshold: 2, expirationDate: "2026-08-25" },
   { id: "butter", name: "Butter", quantity: 1, unit: "stick pack", lowStockThreshold: 1, expirationDate: "2026-08-10" },
   { id: "fresh-thyme", name: "Fresh thyme", quantity: 1, unit: "bunch", lowStockThreshold: 1, expirationDate: "2026-08-14" },
   { id: "avocado", name: "Avocado", quantity: 2, unit: "", lowStockThreshold: 2, expirationDate: "2026-08-18" },
