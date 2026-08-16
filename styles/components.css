@@ -83,10 +83,8 @@ a:hover {
 /* -------------------------------------------------------------
  * Today's meal card
  * ----------------------------------------------------------- */
-.meal-card-time {
-  background: var(--color-status-neutral-bg);
-  color: var(--color-status-neutral-fg);
-  font-weight: var(--font-weight-semibold);
+.meal-card-preptime {
+  margin: 0;
 }
 .meal-card-empty {
   text-align: left;
@@ -108,6 +106,30 @@ a:hover {
 .ingredient-chip {
   background: var(--color-gray-100);
   color: var(--color-gray-700);
+}
+
+/* -------------------------------------------------------------
+ * Meal category tags
+ * ----------------------------------------------------------- */
+.meal-tag {
+  font-weight: var(--font-weight-semibold);
+}
+.meal-tag-corner {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+}
+.meal-tag-meat {
+  background: var(--color-status-danger-bg);
+  color: var(--color-status-danger-fg);
+}
+.meal-tag-fish {
+  background: var(--color-status-info-bg);
+  color: var(--color-status-info-fg);
+}
+.meal-tag-vegetarian {
+  background: var(--color-status-success-bg);
+  color: var(--color-status-success-fg);
 }
 
 /* -------------------------------------------------------------
@@ -141,6 +163,12 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 2px;
+}
+.week-day-row-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
 }
 .week-day-select {
   flex-shrink: 0;

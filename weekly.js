@@ -36,9 +36,12 @@ function renderDayRow(dayKey, plan) {
         <span class="label-eyebrow text-2xs">${WEEK_DAY_LABELS[dayKey]}</span>
         ${infoMarkup}
       </div>
-      <select class="form-input week-day-select" data-day="${dayKey}">
-        ${renderMealOptions(mealId)}
-      </select>
+      <div class="week-day-row-right">
+        ${renderMealCategoryTag(meal && meal.category)}
+        <select class="form-input week-day-select" data-day="${dayKey}">
+          ${renderMealOptions(mealId)}
+        </select>
+      </div>
     </div>
   `;
 }

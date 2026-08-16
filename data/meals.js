@@ -12,6 +12,7 @@
  * @property {string} id            Stable id, referenced from weeklyPlan.js as a foreign key.
  * @property {string} name          Display name shown in the UI.
  * @property {string} prepTime      Rough hands-on time, as a display string (e.g. "25 min").
+ * @property {"meat"|"fish"|"vegetarian"} category  What the meal is built around — drives the colored tag shown in the UI.
  * @property {Ingredient[]} ingredients  What the grocery list is built from.
  *
  * @type {Meal[]}
@@ -21,6 +22,7 @@ const MEALS = [
     id: "turkey-chili",
     name: "Turkey Chili",
     prepTime: "35 min",
+    category: "meat",
     ingredients: [
       { name: "Ground turkey", quantity: "1", unit: "lb" },
       { name: "Kidney beans", quantity: "2", unit: "cans" },
@@ -33,6 +35,7 @@ const MEALS = [
     id: "sheet-pan-salmon",
     name: "Sheet-Pan Salmon & Veggies",
     prepTime: "30 min",
+    category: "fish",
     ingredients: [
       { name: "Salmon fillets", quantity: "2", unit: "" },
       { name: "Broccoli", quantity: "1", unit: "head" },
@@ -45,6 +48,7 @@ const MEALS = [
     id: "chicken-stir-fry",
     name: "Chicken Stir-Fry",
     prepTime: "25 min",
+    category: "meat",
     ingredients: [
       { name: "Chicken breast", quantity: "1", unit: "lb" },
       { name: "Bell peppers", quantity: "2", unit: "" },
@@ -57,6 +61,7 @@ const MEALS = [
     id: "aglio-e-olio",
     name: "Spaghetti Aglio e Olio",
     prepTime: "20 min",
+    category: "vegetarian",
     ingredients: [
       { name: "Spaghetti", quantity: "12", unit: "oz" },
       { name: "Garlic", quantity: "6", unit: "cloves" },
@@ -69,6 +74,7 @@ const MEALS = [
     id: "black-bean-tacos",
     name: "Black Bean Tacos",
     prepTime: "20 min",
+    category: "vegetarian",
     ingredients: [
       { name: "Black beans", quantity: "2", unit: "cans" },
       { name: "Corn tortillas", quantity: "8", unit: "" },
@@ -81,6 +87,7 @@ const MEALS = [
     id: "roast-chicken",
     name: "Roast Chicken & Potatoes",
     prepTime: "1 hr 15 min",
+    category: "meat",
     ingredients: [
       { name: "Whole chicken", quantity: "1", unit: "" },
       { name: "Yukon gold potatoes", quantity: "2", unit: "lb" },

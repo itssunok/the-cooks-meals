@@ -40,6 +40,8 @@
   --color-status-warning-fg: #99650A;
   --color-status-danger-bg: #FCE8E6;
   --color-status-danger-fg: #B3261E;
+  --color-status-info-bg: #DCEBFC;
+  --color-status-info-fg: #1D5FA8;
   --color-status-neutral-bg: #F5F5F5;
   --color-status-neutral-fg: #757575;
 
@@ -128,6 +130,7 @@
  * Card
  * ------------------------------------------------------------------- */
 .card {
+  position: relative;
   background: var(--color-white);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-page);

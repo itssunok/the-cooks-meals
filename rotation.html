@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="./styles/components.css">
 <script src="./data/meals.js" defer></script>
 <script src="./mealStore.js" defer></script>
+<script src="./mealTags.js" defer></script>
 <script src="./rotation.js" defer></script>
 </head>
 <body>
@@ -33,6 +34,14 @@
       <div class="form-field">
         <label class="label-eyebrow text-2xs" for="meal-prep-time">Prep time</label>
         <input class="form-input" type="text" id="meal-prep-time" name="prepTime" placeholder="e.g. 25 min">
+      </div>
+      <div class="form-field">
+        <label class="label-eyebrow text-2xs" for="meal-category">Category</label>
+        <select class="form-input" id="meal-category" name="category">
+          <option value="meat">Meat</option>
+          <option value="fish">Fish</option>
+          <option value="vegetarian">Vegetarian</option>
+        </select>
       </div>
       <div class="form-field">
         <label class="label-eyebrow text-2xs" for="meal-ingredients">Ingredients (one per line: name, quantity, unit)</label>

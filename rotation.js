@@ -7,10 +7,9 @@ function renderIngredientChips(ingredients) {
 function renderMealCard(meal) {
   return `
     <div class="card meal-card">
-      <div class="flex-row-between">
-        <h2 class="title-h3">${meal.name}</h2>
-        <span class="chip-pill meal-card-time">${meal.prepTime}</span>
-      </div>
+      ${renderMealCategoryTag(meal.category, true)}
+      <h2 class="title-h3">${meal.name}</h2>
+      <p class="text-muted text-sm meal-card-preptime">${meal.prepTime}</p>
       <div class="ingredient-list">${renderIngredientChips(meal.ingredients)}</div>
     </div>
   `;
@@ -30,6 +29,7 @@ function handleAddMealSubmit(event) {
   addMealToRotation({
     name,
     prepTime: form.elements.prepTime.value.trim(),
+    category: form.elements.category.value,
     ingredientsText: form.elements.ingredients.value,
   });
 

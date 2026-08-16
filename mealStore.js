@@ -36,12 +36,13 @@ function parseIngredientLines(text) {
     });
 }
 
-function addMealToRotation({ name, prepTime, ingredientsText }) {
+function addMealToRotation({ name, prepTime, category, ingredientsText }) {
   const customMeals = loadCustomMeals();
   const meal = {
     id: slugify(name) || `meal-${Date.now()}`,
     name,
     prepTime: prepTime || "—",
+    category: category || "",
     ingredients: parseIngredientLines(ingredientsText),
   };
   customMeals.push(meal);
