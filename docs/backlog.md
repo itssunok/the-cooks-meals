@@ -9,7 +9,7 @@ Prioritized MoSCoW-style. Evaluate new items against the product's PRD and locke
 
 ## High Priority (Must)
 
-- `[open]` Grocery list generated from weekly plan minus pantry — auto-rolls up missing ingredients, manually editable (PRD Story 3).
+All Must-tier items are built.
 
 ---
 
