@@ -37,11 +37,30 @@ a:hover {
  * App header
  * ----------------------------------------------------------- */
 .app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: var(--space-3) 0 var(--space-5);
 }
 .app-title {
   font-size: var(--font-size-logo);
   font-weight: var(--font-weight-logo);
+}
+.app-nav {
+  display: flex;
+  gap: var(--space-4);
+}
+.app-nav-link {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+.app-nav-link:hover {
+  color: var(--color-black);
+}
+.app-nav-link-active {
+  color: var(--color-primary);
 }
 
 /* -------------------------------------------------------------
@@ -89,6 +108,25 @@ a:hover {
 .ingredient-chip {
   background: var(--color-gray-100);
   color: var(--color-gray-700);
+}
+
+/* -------------------------------------------------------------
+ * Weekly planner day row
+ * ----------------------------------------------------------- */
+.week-day-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.week-day-row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.week-day-select {
+  flex-shrink: 0;
+  width: 200px;
 }
 
 /* -------------------------------------------------------------

@@ -16,7 +16,7 @@ function renderIngredientChips(ingredients) {
 
 function renderTodayMealCard() {
   const todayKey = getTodayKey();
-  const mealId = WEEKLY_PLAN[todayKey];
+  const mealId = getWeeklyPlan()[todayKey];
   const meal = mealId ? getMealById(mealId) : null;
 
   if (!meal) {
@@ -24,7 +24,7 @@ function renderTodayMealCard() {
       <div class="card meal-card-empty">
         <p class="meal-card-empty-title">No dinner planned for tonight yet.</p>
         <p class="text-muted text-sm">This is the gap that turns into takeout — plan the week to fill it in.</p>
-        <button type="button" class="btn btn-secondary" disabled title="Weekly planner — coming next">Plan the week</button>
+        <a href="./weekly.html" class="btn btn-secondary">Plan the week</a>
       </div>
     `;
   }

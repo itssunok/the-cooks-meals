@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This Week — Meal Planner</title>
+<link rel="stylesheet" href="./styles/tokens.css">
+<link rel="stylesheet" href="./styles/components.css">
+<script src="./data/meals.js" defer></script>
+<script src="./data/weeklyPlan.js" defer></script>
+<script src="./planStore.js" defer></script>
+<script src="./weekly.js" defer></script>
+</head>
+<body>
+<div class="page">
+
+  <header class="app-header">
+    <span class="app-title">Meal Planner</span>
+    <nav class="app-nav">
+      <a href="./index.html" class="app-nav-link">Today</a>
+      <a href="./weekly.html" class="app-nav-link app-nav-link-active">This Week</a>
+    </nav>
+  </header>
+
+  <section class="section" aria-labelledby="week-heading">
+    <h1 id="week-heading" class="title-h1">This Week</h1>
+    <p class="section-desc">Pick from the rotation for each day. Changes are saved automatically.</p>
+    <div id="week-list"></div>
+  </section>
+
+</div>
+</body>
+</html>
