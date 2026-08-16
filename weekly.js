@@ -10,12 +10,12 @@ const WEEK_DAY_LABELS = {
 };
 
 function getMealById(id) {
-  return MEALS.find((meal) => meal.id === id) || null;
+  return getRotation().find((meal) => meal.id === id) || null;
 }
 
 function renderMealOptions(selectedMealId) {
   const notPlannedOption = `<option value=""${selectedMealId ? "" : " selected"}>Not planned</option>`;
-  const mealOptions = MEALS.map((meal) => {
+  const mealOptions = getRotation().map((meal) => {
     const selected = meal.id === selectedMealId ? " selected" : "";
     return `<option value="${meal.id}"${selected}>${meal.name}</option>`;
   }).join("");

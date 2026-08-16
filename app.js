@@ -5,7 +5,7 @@ function getTodayKey() {
 }
 
 function getMealById(id) {
-  return MEALS.find((meal) => meal.id === id) || null;
+  return getRotation().find((meal) => meal.id === id) || null;
 }
 
 function renderIngredientChips(ingredients) {

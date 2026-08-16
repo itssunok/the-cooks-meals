@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rotation — Meal Planner</title>
+<link rel="stylesheet" href="./styles/tokens.css">
+<link rel="stylesheet" href="./styles/components.css">
+<script src="./data/meals.js" defer></script>
+<script src="./mealStore.js" defer></script>
+<script src="./rotation.js" defer></script>
+</head>
+<body>
+<div class="page">
+
+  <header class="app-header">
+    <span class="app-title">Meal Planner</span>
+    <nav class="app-nav">
+      <a href="./index.html" class="app-nav-link">Today</a>
+      <a href="./weekly.html" class="app-nav-link">This Week</a>
+      <a href="./rotation.html" class="app-nav-link app-nav-link-active">Rotation</a>
+    </nav>
+  </header>
+
+  <section class="section" aria-labelledby="add-meal-heading">
+    <h1 id="add-meal-heading" class="title-h1">Rotation</h1>
+    <p class="section-desc">The go-to meals picked from when planning the week.</p>
+    <form id="add-meal-form" class="card add-meal-form">
+      <div class="form-field">
+        <label class="label-eyebrow text-2xs" for="meal-name">Name</label>
+        <input class="form-input" type="text" id="meal-name" name="name" required>
+      </div>
+      <div class="form-field">
+        <label class="label-eyebrow text-2xs" for="meal-prep-time">Prep time</label>
+        <input class="form-input" type="text" id="meal-prep-time" name="prepTime" placeholder="e.g. 25 min">
+      </div>
+      <div class="form-field">
+        <label class="label-eyebrow text-2xs" for="meal-ingredients">Ingredients (one per line: name, quantity, unit)</label>
+        <textarea class="form-input add-meal-ingredients" id="meal-ingredients" name="ingredients" rows="4" placeholder="Chicken breast, 1, lb"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Add to rotation</button>
+    </form>
+  </section>
+
+  <section class="section" aria-labelledby="rotation-heading">
+    <h2 id="rotation-heading" class="section-title">All meals</h2>
+    <div id="rotation-list"></div>
+  </section>
+
+</div>
+</body>
+</html>
