@@ -9,7 +9,6 @@ Prioritized MoSCoW-style. Evaluate new items against the product's PRD and locke
 
 ## High Priority (Must)
 
-- `[open]` Add-to-rotation flow — a way to add a new meal to the rotation from the UI (currently rotation is a static data file with no add path); low-effort by design, not full recipe authoring (PRD Story 2).
 - `[open]` Pantry data model + screen — on-hand staples/ingredients with quantity and expiration date, low-stock and expired flags (PRD Story 3).
 - `[open]` Grocery list generated from weekly plan minus pantry — auto-rolls up missing ingredients, manually editable (PRD Story 3).
 
