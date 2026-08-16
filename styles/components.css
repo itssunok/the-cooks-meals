@@ -1,10 +1,9 @@
 /**
  * components.css
  *
- * Holds both reusable component styles (buttons, cards, tables, status
- * pills, etc.) and this boilerplate page's demo-specific styles (hero,
- * typography samples, color swatches, footer). Kept together in a single
- * file per project preference for a simpler two-file split: tokens.css +
+ * Reusable component styles (buttons, cards, chips, status pills) plus
+ * Meal Planner's page-specific styles. Kept together in a single file per
+ * project preference for a simpler two-file split: tokens.css +
  * components.css — no separate per-page or per-component stylesheets.
  */
 * { box-sizing: border-box; }
@@ -35,22 +34,14 @@ a:hover {
 }
 
 /* -------------------------------------------------------------
- * Hero
+ * App header
  * ----------------------------------------------------------- */
-.hero-eyebrow {
-  color: var(--color-primary);
+.app-header {
+  padding: var(--space-3) 0 var(--space-5);
 }
-.hero-title {
-  font-size: var(--font-size-32);
-  font-weight: var(--font-weight-heavy);
-  letter-spacing: -0.02em;
-  margin: var(--space-2) 0 var(--space-2);
-}
-.hero-subtitle {
-  color: var(--color-gray-700);
-  font-size: var(--font-size-md);
-  max-width: 60ch;
-  margin: 0 0 var(--space-5);
+.app-title {
+  font-size: var(--font-size-logo);
+  font-weight: var(--font-weight-logo);
 }
 
 /* -------------------------------------------------------------
@@ -71,71 +62,44 @@ a:hover {
 }
 
 /* -------------------------------------------------------------
- * Typography sample
+ * Today's meal card
  * ----------------------------------------------------------- */
-.type-sample-row {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-3);
-  padding: var(--space-2) 0;
-  border-bottom: 1px solid var(--color-border-default);
-}
-.type-sample-row:last-child {
-  border-bottom: none;
-}
-.type-sample-label {
-  width: 90px;
-  flex-shrink: 0;
-  color: var(--color-gray-600);
-  font-size: var(--font-size-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.type-sample-h1 { font-size: var(--font-size-h1); font-weight: var(--font-weight-h1); margin: 0; }
-.type-sample-h2 { font-size: var(--font-size-h2); font-weight: var(--font-weight-h2); margin: 0; }
-.type-sample-h3 { font-size: var(--font-size-h3); font-weight: var(--font-weight-h3); margin: 0; }
-.type-sample-body { font-size: var(--font-size-body-lead); margin: 0; }
-.type-sample-small { font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0; }
-
-/* -------------------------------------------------------------
- * Color swatches
- * ----------------------------------------------------------- */
-.swatch-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: var(--space-3);
-}
-.swatch {
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-inline);
-  overflow: hidden;
-  background: var(--color-white);
-}
-.swatch-color {
-  height: 56px;
-}
-.swatch-meta {
-  padding: var(--space-2);
-}
-.swatch-name {
-  display: block;
-  font-size: var(--font-size-sm);
+.meal-card-time {
+  background: var(--color-status-neutral-bg);
+  color: var(--color-status-neutral-fg);
   font-weight: var(--font-weight-semibold);
 }
-.swatch-value {
-  display: block;
-  font-size: var(--font-size-xs);
-  color: var(--color-gray-600);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+.meal-card-empty {
+  text-align: left;
 }
-.swatch-color-black { background: var(--color-black); }
-.swatch-color-primary { background: var(--color-primary); }
-.swatch-color-primary-hover { background: var(--color-primary-hover); }
-.swatch-color-gray-300 { background: var(--color-gray-300); }
-.swatch-color-gray-600 { background: var(--color-gray-600); }
-.swatch-color-success { background: var(--color-status-success-fg); }
-.swatch-color-warning { background: var(--color-status-warning-fg); }
-.swatch-color-danger { background: var(--color-status-danger-fg); }
+.meal-card-empty-title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-h3);
+  margin: 0 0 4px;
+}
+.meal-card-empty .btn {
+  margin-top: var(--space-3);
+}
+.ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.ingredient-chip {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+}
+
+/* -------------------------------------------------------------
+ * Cat food task card
+ * ----------------------------------------------------------- */
+.cat-food-tag {
+  background: var(--color-status-warning-bg);
+  color: var(--color-status-warning-fg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+}
 
 /* -------------------------------------------------------------
  * Buttons
@@ -169,58 +133,8 @@ a:hover {
 }
 
 /* -------------------------------------------------------------
- * Card demo
+ * Status pill — for future pantry low-stock/expired flags, etc.
  * ----------------------------------------------------------- */
-.demo-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-3);
-}
-.demo-card-title {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-h3);
-  margin: 0 0 4px;
-}
-.demo-card-body {
-  color: var(--color-gray-700);
-  font-size: var(--font-size-sm);
-  margin: 0 0 var(--space-2);
-}
-.demo-card-tag {
-  background: var(--color-status-success-bg);
-  color: var(--color-status-success-fg);
-}
-
-/* -------------------------------------------------------------
- * Table
- * ----------------------------------------------------------- */
-.table-wrap {
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-page);
-  overflow: hidden;
-  background: var(--color-white);
-}
-table.demo-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.demo-table th, .demo-table td {
-  text-align: left;
-  padding: 10px 14px;
-  font-size: var(--font-size-sm);
-  border-bottom: 1px solid var(--color-border-default);
-}
-.demo-table th {
-  color: var(--color-gray-600);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  font-size: var(--font-size-2xs);
-  letter-spacing: 0.04em;
-  background: var(--color-gray-50);
-}
-.demo-table tr:last-child td {
-  border-bottom: none;
-}
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -232,19 +146,3 @@ table.demo-table {
 .status-pill-success { background: var(--color-status-success-bg); color: var(--color-status-success-fg); }
 .status-pill-warning { background: var(--color-status-warning-bg); color: var(--color-status-warning-fg); }
 .status-pill-danger { background: var(--color-status-danger-bg); color: var(--color-status-danger-fg); }
-
-/* -------------------------------------------------------------
- * Footer
- * ----------------------------------------------------------- */
-.footer {
-  border-top: 1px solid var(--color-border-default);
-  padding-top: var(--space-4);
-  color: var(--color-gray-600);
-  font-size: var(--font-size-xs);
-}
-.footer code {
-  background: var(--color-gray-100);
-  border-radius: 4px;
-  padding: 1px 5px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-}

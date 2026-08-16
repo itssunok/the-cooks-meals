@@ -3,180 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boilerplate — Vibe-Coded Hifi Prototype Starter</title>
+<title>Meal Planner</title>
 <link rel="stylesheet" href="./styles/tokens.css">
 <link rel="stylesheet" href="./styles/components.css">
+<script src="./data/meals.js" defer></script>
+<script src="./data/weeklyPlan.js" defer></script>
+<script src="./data/catFoodSchedule.js" defer></script>
+<script src="./app.js" defer></script>
 </head>
 <body>
 <div class="page">
 
-  <header class="section">
-    <p class="hero-eyebrow label-eyebrow text-sm">Zero-build HTML/CSS/JS boilerplate</p>
-    <h1 class="hero-title">Welcome to the boilerplate</h1>
-    <p class="hero-subtitle">
-      This page has no framework and no bundler — just plain HTML, CSS, and JS loaded
-      straight in the browser. It exists to show the design system in <code>styles/tokens.css</code>
-      working end to end, so a new product can fork this repo and start from a real
-      foundation instead of a blank file.
-    </p>
+  <header class="app-header">
+    <span class="app-title">Meal Planner</span>
   </header>
 
-  <section class="section" aria-labelledby="type-heading">
-    <h2 id="type-heading" class="section-title">Typography</h2>
-    <p class="section-desc">The heading/body scale defined by --font-size-h1/h2/h3/body tokens.</p>
-    <div class="card">
-      <div class="type-sample-row">
-        <span class="type-sample-label">Heading 1</span>
-        <p class="type-sample-h1">The quick brown fox</p>
-      </div>
-      <div class="type-sample-row">
-        <span class="type-sample-label">Heading 2</span>
-        <p class="type-sample-h2">The quick brown fox</p>
-      </div>
-      <div class="type-sample-row">
-        <span class="type-sample-label">Heading 3</span>
-        <p class="type-sample-h3">The quick brown fox</p>
-      </div>
-      <div class="type-sample-row">
-        <span class="type-sample-label">Body</span>
-        <p class="type-sample-body">The quick brown fox jumps over the lazy dog.</p>
-      </div>
-      <div class="type-sample-row">
-        <span class="type-sample-label">Small</span>
-        <p class="type-sample-small">The quick brown fox jumps over the lazy dog.</p>
-      </div>
-    </div>
+  <section class="section" aria-labelledby="today-heading">
+    <p class="label-eyebrow text-sm" id="today-date"></p>
+    <h1 id="today-heading" class="title-h1">Tonight's Dinner</h1>
+    <div id="today-meal-card"></div>
   </section>
 
-  <section class="section" aria-labelledby="color-heading">
-    <h2 id="color-heading" class="section-title">Color</h2>
-    <p class="section-desc">Core neutrals, the primary action color, and semantic status colors.</p>
-    <div class="swatch-grid">
-      <div class="swatch">
-        <div class="swatch-color swatch-color-black"></div>
-        <div class="swatch-meta">
-          <span class="swatch-name">Black</span>
-          <span class="swatch-value">--color-black</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color swatch-color-primary"></div>
-        <div class="swatch-meta">
-          <span class="swatch-name">Primary</span>
-          <span class="swatch-value">--color-primary</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color swatch-color-primary-hover"></div>
-        <div class="swatch-meta">
-          <span class="swatch-name">Primary hover</span>
-          <span class="swatch-value">--color-primary-hover</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color swatch-color-gray-300"></div>
-        <div class="swatch-meta">
-          <span class="swatch-name">Gray 300</span>
-          <span class="swatch-value">--color-gray-300</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color swatch-color-gray-600"></div>
-        <div class="swatch-meta">
-          <span class="swatch-name">Gray 600</span>
-          <span class="swatch-value">--color-gray-600</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color swatch-color-success"></div>
-        <div class="swatch-meta">
-          <span class="swatch-name">Success</span>
-          <span class="swatch-value">--color-status-success-fg</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color swatch-color-warning"></div>
-        <div class="swatch-meta">
-          <span class="swatch-name">Warning</span>
-          <span class="swatch-value">--color-status-warning-fg</span>
-        </div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color swatch-color-danger"></div>
-        <div class="swatch-meta">
-          <span class="swatch-name">Danger</span>
-          <span class="swatch-value">--color-status-danger-fg</span>
-        </div>
-      </div>
-    </div>
+  <section class="section" id="cat-food-section" aria-labelledby="cat-food-heading" hidden>
+    <h2 id="cat-food-heading" class="section-title">Today's Prep</h2>
+    <div id="cat-food-card"></div>
   </section>
-
-  <section class="section" aria-labelledby="button-heading">
-    <h2 id="button-heading" class="section-title">Buttons</h2>
-    <p class="section-desc">Pill-shaped primary and secondary variants.</p>
-    <div class="btn-row">
-      <button type="button" class="btn btn-primary">Primary action</button>
-      <button type="button" class="btn btn-secondary">Secondary action</button>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="card-heading">
-    <h2 id="card-heading" class="section-title">Card</h2>
-    <p class="section-desc">The shared .card class — hairline border, page radius, no drop shadow.</p>
-    <div class="demo-card-grid">
-      <div class="card">
-        <h3 class="demo-card-title">Fast to fork</h3>
-        <p class="demo-card-body">No install step. Clone the repo, open index.html, start editing.</p>
-        <span class="chip-pill demo-card-tag">No build step</span>
-      </div>
-      <div class="card">
-        <h3 class="demo-card-title">Token-driven</h3>
-        <p class="demo-card-body">Every color, spacing, and radius value traces back to styles/tokens.css.</p>
-        <span class="chip-pill demo-card-tag">Design system</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="table-heading">
-    <h2 id="table-heading" class="section-title">Table</h2>
-    <p class="section-desc">A simple data table using the same status-pill pattern as the color swatches above.</p>
-    <div class="table-wrap">
-      <table class="demo-table">
-        <thead>
-          <tr>
-            <th scope="col">Component</th>
-            <th scope="col">Owner</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Design tokens</td>
-            <td>styles/tokens.css</td>
-            <td><span class="status-pill status-pill-success">Ready</span></td>
-          </tr>
-          <tr>
-            <td>Mock data schema</td>
-            <td>data/*.js</td>
-            <td><span class="status-pill status-pill-warning">Stubbed</span></td>
-          </tr>
-          <tr>
-            <td>Production foundation</td>
-            <td>docs/backlog.md</td>
-            <td><span class="status-pill status-pill-danger">Deferred</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>
-      Data files under <code>data/</code> are schema stubs — each keeps its JSDoc field-shape
-      header but ships with an empty array, ready for a new product's mock data. See
-      <code>CLAUDE.md</code> for the conventions this boilerplate follows.
-    </p>
-  </footer>
 
 </div>
 </body>
