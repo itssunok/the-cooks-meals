@@ -24,7 +24,7 @@ function renderTodayMealCard() {
       <div class="card meal-card-empty">
         <p class="meal-card-empty-title">No dinner planned for tonight yet.</p>
         <p class="text-muted text-sm">This is the gap that turns into takeout — plan the week to fill it in.</p>
-        <a href="./weekly.html" class="btn btn-secondary">Plan the week</a>
+        <a href="./pages/weekly.html" class="btn btn-secondary">Plan the week</a>
       </div>
     `;
   }
