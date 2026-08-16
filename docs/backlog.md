@@ -18,6 +18,7 @@ Prioritized MoSCoW-style. Evaluate new items against the product's PRD and locke
 
 - `[open]` Spend log — $ field when logging a grocery trip, $ field when marking a night "ordered out" instead of following the plan; viewable as a simple list/history, no dashboard (PRD Story 5).
 - `[open]` Notifications bell/panel (mocked) — reminders for weekly planning not yet done, cat food prep day, and pantry low-stock/expiring items; static/simulated, no real push (PRD Story 6).
+- `[open]` Recipe detail side sheet — tapping any meal card or the cat food task (today view, weekly planner, rotation) opens a side sheet with full ingredients + step-by-step instructions; read-only, consistent across every screen a card appears on. Requires adding an `instructions` field to the meal/cat-food data models, which don't currently have one (PRD Story 7).
 
 ---
 

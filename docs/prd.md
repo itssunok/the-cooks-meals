@@ -86,6 +86,11 @@ Since this is a two-person household prototype rather than a metered product, "s
 - [ ] Given the cat food prep day arrives, when due, then a mocked reminder appears in the notification panel.
 - [ ] Given a pantry item is low or expiring, when that state is reached, then a mocked reminder appears in the notification panel.
 
+**Story 7:** As either partner, I want to tap any meal or the cat food task and see full details (ingredients + step-by-step instructions), so that I don't need to remember how to make it from memory.
+**Acceptance Criteria:**
+- [ ] Given any meal card (today view, weekly planner, rotation) or the cat food task, when tapped, then a side sheet opens with the full recipe: ingredients and step-by-step instructions.
+- [ ] Given the side sheet is open, when dismissed, then the underlying view is unchanged — this is a read-only detail view, not an edit flow.
+
 ---
 
 ## 6. Solution Overview
@@ -97,6 +102,7 @@ Meal Planner is built around one core surface: **today's plan, visible immediate
 - **Meal rotation:** The household's list of go-to meals, each with its ingredients, reusable across weeks.
 - **Pantry:** Tracks on-hand staples/ingredients with quantity-low and expiration flags — this is what the grocery list is generated *against*.
 - **Grocery list:** Auto-generated from the week's planned meals' ingredients minus what the pantry already covers; remains manually editable.
+- **Recipe detail side sheet:** Tapping any meal card or the cat food task opens a side sheet with the full recipe — ingredients plus step-by-step instructions — consistent across every screen a card appears on.
 - **Spend log:** Lightweight $ tracking — logging a grocery trip captures its cost, and marking a night as "ordered out" (instead of following the plan) captures that cost too. Enough to see spend trends over time; not a budgeting dashboard.
 - **Notifications:** A mocked in-app notification bell/panel — the reminder mechanism for the three forgetting-prone moments the PRD identifies: the weekly planning session not happening, cat food prep day arriving, and pantry items going low or expiring. Static/simulated, not real push notifications, consistent with the frontend-only prototype.
 - **Cat food:** A fixed recipe on a recurring schedule, surfaced as its own recurring task type — not folded into the human meal rotation, since it's not a decision anyone makes each time.
