@@ -69,6 +69,70 @@ a:hover {
 }
 
 /* -------------------------------------------------------------
+ * Side sheet — shared overlay/panel primitive, used by both the
+ * notifications sheet and the recipe detail sheet.
+ * ----------------------------------------------------------- */
+.sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: 20;
+}
+.sheet-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  max-width: 90vw;
+  overflow-y: auto;
+  padding: var(--space-4);
+  margin: 0;
+  background: var(--color-white);
+  border-left: 1px solid var(--color-border-default);
+  z-index: 21;
+  animation: panel-slide-in var(--transition-base);
+}
+.sheet-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+.sheet-panel-title {
+  margin: 0;
+}
+
+/* -------------------------------------------------------------
+ * Recipe detail sheet content
+ * ----------------------------------------------------------- */
+.recipe-openable {
+  cursor: pointer;
+}
+.recipe-sheet-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.recipe-sheet-section-title {
+  margin: var(--space-4) 0 var(--space-2);
+}
+.recipe-sheet-section-title:first-of-type {
+  margin-top: 0;
+}
+.recipe-instructions {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.recipe-instructions li {
+  font-size: var(--font-size-sm);
+}
+
+/* -------------------------------------------------------------
  * Notification bell
  * ----------------------------------------------------------- */
 .notif-bell-wrap {
@@ -93,36 +157,6 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.notif-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.32);
-  z-index: 20;
-}
-.notif-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 360px;
-  max-width: 90vw;
-  overflow-y: auto;
-  padding: var(--space-4);
-  margin: 0;
-  background: var(--color-white);
-  border-left: 1px solid var(--color-border-default);
-  z-index: 21;
-  animation: panel-slide-in var(--transition-base);
-}
-.notif-panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-3);
-}
-.notif-panel-title {
-  margin: 0;
 }
 .notif-card {
   display: flex;

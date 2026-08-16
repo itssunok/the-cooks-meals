@@ -36,7 +36,14 @@ function parseIngredientLines(text) {
     });
 }
 
-function addMealToRotation({ name, prepTime, category, ingredientsText }) {
+function parseInstructionLines(text) {
+  return text
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function addMealToRotation({ name, prepTime, category, ingredientsText, instructionsText }) {
   const customMeals = loadCustomMeals();
   const meal = {
     id: slugify(name) || `meal-${Date.now()}`,
@@ -44,6 +51,7 @@ function addMealToRotation({ name, prepTime, category, ingredientsText }) {
     prepTime: prepTime || "—",
     category: category || "",
     ingredients: parseIngredientLines(ingredientsText),
+    instructions: parseInstructionLines(instructionsText || ""),
   };
   customMeals.push(meal);
   saveCustomMeals(customMeals);

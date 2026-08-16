@@ -29,9 +29,11 @@ function renderDayRow(dayKey, plan) {
   const mealLabel = meal
     ? `<span class="week-day-meal">${meal.name}</span>`
     : `<span class="week-day-meal text-muted">Not planned yet</span>`;
+  const openableAttrs = meal ? ` data-recipe-type="meal" data-recipe-id="${meal.id}"` : "";
+  const openableClass = meal ? " recipe-openable" : "";
 
   return `
-    <div class="card week-day-row">
+    <div class="card week-day-row${openableClass}"${openableAttrs}>
       <p class="week-day-label">
         <span class="week-day-name">${WEEK_DAY_LABELS[dayKey]}</span>
         <span class="week-day-sep text-muted">—</span>

@@ -24,7 +24,7 @@ function renderTodayMealCard() {
   }
 
   return `
-    <div class="card meal-card">
+    <div class="card meal-card recipe-openable" data-recipe-type="meal" data-recipe-id="${meal.id}">
       ${renderMealCategoryTag(meal.category, true)}
       <h2 class="title-h2">${meal.name}</h2>
       <p class="text-muted text-sm meal-card-preptime">${meal.prepTime}</p>
@@ -45,7 +45,7 @@ function renderCatFoodSection() {
 
   section.hidden = false;
   card.innerHTML = `
-    <div class="card meal-card">
+    <div class="card meal-card recipe-openable" data-recipe-type="catfood">
       ${renderMealCategoryTag("catFood", true)}
       <h2 class="title-h2">${CAT_FOOD_TASK.recipeName}</h2>
       <p class="text-muted text-sm meal-card-preptime">Yields ${CAT_FOOD_TASK.batchYield}</p>

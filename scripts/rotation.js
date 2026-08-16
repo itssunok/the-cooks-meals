@@ -6,7 +6,7 @@ function renderIngredientChips(ingredients) {
 
 function renderMealCard(meal) {
   return `
-    <div class="card meal-card">
+    <div class="card meal-card recipe-openable" data-recipe-type="meal" data-recipe-id="${meal.id}">
       ${renderMealCategoryTag(meal.category, true)}
       <h2 class="title-h3">${meal.name}</h2>
       <p class="text-muted text-sm meal-card-preptime">${meal.prepTime}</p>
@@ -31,6 +31,7 @@ function handleAddMealSubmit(event) {
     prepTime: form.elements.prepTime.value.trim(),
     category: form.elements.category.value,
     ingredientsText: form.elements.ingredients.value,
+    instructionsText: form.elements.instructions.value,
   });
 
   form.reset();
